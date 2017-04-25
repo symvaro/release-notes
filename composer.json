@@ -1,0 +1,27 @@
+{
+    "name": "symvaro/release-notes",
+    "require": {
+        "laravel/framework": "5.1.* | 5.2.* | ^5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.4.*",
+        "fzaninotto/faker": "^1.6"
+    },
+    "authors": [
+        {
+            "name": "Daniel Baeck",
+            "email": "db@sharpsrc.net"
+        }
+    ],
+
+    "autoload": {
+        "psr-0": {
+            "Symvaro\\ReleaseNotes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Tests\\": "tests/"
+      }
+  }
+}
