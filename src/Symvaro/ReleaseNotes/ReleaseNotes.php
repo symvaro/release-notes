@@ -21,8 +21,8 @@ class ReleaseNotes
         $filteredNotes = $filteredNotes->sortBy('date');
 
         if (!is_null($minDate)) {
-        	$filteredNotes = $filteredNotes->filter(function ($item) use ($date) {
-			    return (data_get($item, 'date') > $date);
+        	$filteredNotes = $filteredNotes->filter(function ($item) use ($minDate) {
+			    return (data_get($item, 'date') > $minDate);
 			});
         }		
 
