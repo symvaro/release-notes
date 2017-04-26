@@ -18,7 +18,7 @@ class ReleaseNotes
 
         }, $notes);
 
-        $filteredNotes = $filteredNotes->sortBy('date');
+        $filteredNotes = $filteredNotes->sortByDesc('date');
 
         if (!is_null($minDate)) {
         	$filteredNotes = $filteredNotes->filter(function ($item) use ($minDate) {
