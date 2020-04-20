@@ -32,7 +32,7 @@ artisan release:note "Super tolle neue Features"
 
 This automatically creates `.md` files for every language used in your application. The default directory is `resources/views/release/`.
 
-Retrieving all relaese notes, sorted by date created, for current set language
+Retrieving all release notes, sorted by date created, for current set language
 
 ```
 \ReleaseNotes::notesForCurrentLocale();
