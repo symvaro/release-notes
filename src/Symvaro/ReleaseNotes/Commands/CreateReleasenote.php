@@ -46,7 +46,7 @@ class CreateReleasenote extends Command
         $this->info('creating relesenotes for release with name ' . $tag . '...');
 
         // Get all existing languages
-        $languages = array_map('basename', \File::directories(base_path('resources/lang')));
+        $languages = $this->getLanguages();
         $contents = '### ' . $tag;
 
         $this->info('creating files for languages: ' . implode(", ", $languages));
@@ -68,4 +68,28 @@ class CreateReleasenote extends Command
     {
         return date('Y_m_d_His');
     }
+
+    public function getLanguages()
+    {
+        $langPath = \App::langPath();
+        $langFiles = glob("$langPath/*");
+
+        return collect($langFiles)
+            ->map(function ($p)  {
+                $langFile = basename($p);
+
+                if (Str::endsWith($langFile, '.json')) {
+                    $langFile = substr($langFile, 0, strlen($langFile) - strlen('.json'));
+                }
+
+                return $langFile;
+            })
+            ->unique()
+            ->filter(function ($p) {
+                return $p !== 'vendor';
+            })
+            ->sort()
+            ->all();
+    }
+
 }
