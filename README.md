@@ -1,6 +1,6 @@
 ## Release Notes
 
-Laravel Package to create and manage markdown release notes.
+Laravel package to create and manage markdown release notes.
 
 ### Installation
 
