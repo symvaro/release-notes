@@ -7,24 +7,10 @@ Laravel Package to create and manage markdown release notes.
 Composer
 
 ```
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "git@git.symvaro.com:dev/release-notes.git"
-    }
-],
-"require": {
-	"symvaro/release-notes": "dev-master"
-}
+composer require symvaro/release-notes
 ```
 
-add the ServiceProvider in Laravels `config/app.php`
-
-```
-Symvaro\ReleaseNotes\ReleaseNoteServiceProvider::class,
-```
-
-and optionally the Facade
+And optionally add the Facade
 
 ```
 'ReleaseNotes' => Symvaro\ReleaseNotes\Facades\ReleaseNotes::class,
